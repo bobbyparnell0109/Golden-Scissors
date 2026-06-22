@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Website by Claude Code / Anthropic -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin — Golden Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Variables ── */
+    :root {
+      --black:     #0a0a0a;
+      --black-mid: #161616;
+      --white:     #f5f5f0;
+      --dim:       #b8b8b0;
+      --gold:      #c9a84c;
+      --border:    rgba(201, 168, 76, 0.2);
+      --ff-serif:  'Playfair Display', Georgia, serif;
+      --ff-sans:   'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--ff-sans);
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Login Screen ── */
+    #login-screen {
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .login-logo {
+      font-family: var(--ff-serif);
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .login-sub {
+      font-size: 0.82rem;
+      color: var(--dim);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    .login-box {
+      background: var(--black-mid);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem;
+    }
+
+    .login-box label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .login-box input {
+      width: 100%;
+      background: var(--black);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      font-family: var(--ff-sans);
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 4px;
+      outline: none;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .login-box input:focus { border-color: var(--gold); }
+
+    .login-btn {
+      width: 100%;
+      background: var(--gold);
+      color: var(--black);
+      font-family: var(--ff-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      padding: 0.85rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .login-btn:hover { background: #dfc070; }
+
+    .login-error {
+      font-size: 0.83rem;
+      color: #f87171;
+      margin-top: 0.85rem;
+      display: none;
+    }
+
+    /* ── Admin Dashboard ── */
+    #admin-screen {
+      display: none;
+      width: 100%;
+      max-width: 860px;
+    }
+
+    .admin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .admin-title {
+      font-family: var(--ff-serif);
+      font-size: 1.75rem;
+      color: var(--gold);
+    }
+
+    .logout-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--dim);
+      font-family: var(--ff-sans);
+      font-size: 0.82rem;
+      padding: 0.45rem 1rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .logout-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.3); }
+
+    .admin-card {
+      background: var(--black-mid);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem 2rem 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .admin-card h2 {
+      font-family: var(--ff-serif);
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+
+    .admin-card p {
+      font-size: 0.92rem;
+      color: var(--dim);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .admin-card a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .admin-card a:hover { background: #dfc070; }
+
+    .admin-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+
+    .info-cell {
+      background: var(--black);
+      padding: 1rem 1.25rem;
+    }
+
+    .info-cell .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .info-cell .value {
+      font-size: 0.9rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .admin-footer {
+      font-size: 0.75rem;
+      color: rgba(184,184,176,0.4);
+      text-align: center;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Login screen ────────────────────────────────── -->
+  <div id="login-screen">
+    <p class="login-logo">Golden Scissors</p>
+    <p class="login-sub">Admin Access</p>
+
+    <div class="login-box">
+      <label for="pwd-input">Password</label>
+      <!--
+        IMPORTANT: Change the hardcoded password in the JS below before going live.
+        Search for ADMIN_PASSWORD and replace the string with something strong.
+        For production, use a proper auth solution (Netlify Identity, Cloudflare Access, etc.)
+      -->
+      <input
+        type="password"
+        id="pwd-input"
+        placeholder="Enter password"
+        autocomplete="current-password"
+      />
+      <button class="login-btn" id="login-btn">Sign In</button>
+      <p class="login-error" id="login-error">Incorrect password. Try again.</p>
+    </div>
+  </div>
+
+  <!-- ── Admin dashboard ────────────────────────────── -->
+  <div id="admin-screen">
+    <div class="admin-header">
+      <h1 class="admin-title">Booking Dashboard</h1>
+      <button class="logout-btn" id="logout-btn">Sign Out</button>
+    </div>
+
+    <div class="admin-card">
+      <h2>Appointment Submissions</h2>
+      <p>
+        All booking form submissions are collected and stored securely by Formspree.
+        Log in to your Formspree dashboard to view, search, export, and manage every appointment request.
+      </p>
+      <a href="https://formspree.io/login" target="_blank" rel="noopener noreferrer">
+        Open Formspree Dashboard →
+      </a>
+    </div>
+
+    <div class="admin-card">
+      <h2>Business Information</h2>
+      <div class="admin-info-grid">
+        <div class="info-cell">
+          <p class="label">Business</p>
+          <p class="value">Golden Scissors</p>
+        </div>
+        <div class="info-cell">
+          <p class="label">Address</p>
+          <p class="value">115 Norfolk St, King's Lynn PE30 1AP</p>
+        </div>
+        <div class="info-cell">
+          <p class="label">Phone</p>
+          <p class="value">+44 7757 225925</p>
+        </div>
+        <div class="info-cell">
+          <p class="label">Mon–Fri</p>
+          <p class="value">9:00am – 7:00pm</p>
+        </div>
+        <div class="info-cell">
+          <p class="label">Saturday</p>
+          <p class="value">8:00am – 7:00pm</p>
+        </div>
+        <div class="info-cell">
+          <p class="label">Sunday</p>
+          <p class="value">10:00am – 4:00pm</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="admin-footer">Golden Scissors Admin · Protected page · Do not share this URL</p>
+  </div>
+
+  <script>
+    /* ── Simple JS password gate ─────────────────────────────
+       IMPORTANT: Replace 'ADMIN_PASSWORD' below with a strong password.
+       This is client-side only — do not rely on it for sensitive data.
+       Consider Netlify Identity or Cloudflare Access for stronger protection.
+    ─────────────────────────────────────────────────────────── */
+    const ADMIN_PASSWORD = 'golden2026'; // TODO: change before going live
+
+    const SESSION_KEY = 'gs_admin_authed';
+
+    const loginScreen  = document.getElementById('login-screen');
+    const adminScreen  = document.getElementById('admin-screen');
+    const pwdInput     = document.getElementById('pwd-input');
+    const loginBtn     = document.getElementById('login-btn');
+    const loginError   = document.getElementById('login-error');
+    const logoutBtn    = document.getElementById('logout-btn');
+
+    function showAdmin() {
+      loginScreen.style.display = 'none';
+      adminScreen.style.display = 'block';
+    }
+
+    function showLogin() {
+      adminScreen.style.display = 'none';
+      loginScreen.style.display = 'block';
+    }
+
+    // Check if already authed in this session
+    if (sessionStorage.getItem(SESSION_KEY) === '1') {
+      showAdmin();
+    }
+
+    function attemptLogin() {
+      if (pwdInput.value === ADMIN_PASSWORD) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        loginError.style.display = 'none';
+        showAdmin();
+      } else {
+        loginError.style.display = 'block';
+        pwdInput.value = '';
+        pwdInput.focus();
+      }
+    }
+
+    loginBtn.addEventListener('click', attemptLogin);
+    pwdInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') attemptLogin();
+    });
+
+    logoutBtn.addEventListener('click', () => {
+      sessionStorage.removeItem(SESSION_KEY);
+      showLogin();
+    });
+  </script>
+</body>
+</html>

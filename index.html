@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Website by Claude Code / Anthropic — hello@goldensscissors.co.uk -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Golden Scissors — King's Lynn's top-rated barbershop. Book online for haircuts, skin fades, beard trims &amp; more. Open 7 days." />
+  <title>Golden Scissors — King's Lynn Barbershop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       STICKY HEADER
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#hero" class="wordmark">Golden Scissors</a>
+
+      <nav class="nav-desktop">
+        <a href="#services">Services</a>
+        <a href="#gallery">Our Work</a>
+        <a href="#hours">Hours</a>
+        <a href="#booking" class="btn-gold btn-sm">Book Now</a>
+      </nav>
+
+      <div class="nav-mobile-right">
+        <a href="#booking" class="btn-gold btn-sm">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#services" class="mobile-link">Services &amp; Pricing</a>
+      <a href="#gallery" class="mobile-link">Our Work</a>
+      <a href="#booking" class="mobile-link">Book Appointment</a>
+      <a href="#hours" class="mobile-link">Hours &amp; Location</a>
+      <a href="tel:+447757225925" class="mobile-link mobile-call">📞 Call: +44 7757 225925</a>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+       TODO: Replace the CSS gradient background with a real hero image.
+       To add a photo: set background-image: url('your-hero-photo.jpg')
+       on the .hero selector in styles.css, then remove the gradient layers.
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Est. King's Lynn</p>
+      <h1 class="hero-heading">King's Lynn's<br>Finest Barbershop</h1>
+      <p class="hero-sub">Expert cuts, fades &amp; grooming<br>115 Norfolk Street</p>
+      <div class="hero-ctas">
+        <a href="#booking" class="btn-gold btn-lg">Book a Cut</a>
+        <a href="tel:+447757225925" class="btn-outline btn-lg">Call Now</a>
+      </div>
+      <p class="hero-trust">
+        <span class="stars" aria-label="5 stars">★★★★★</span>
+        Rated 4.5 stars &nbsp;·&nbsp; 107 Google Reviews &nbsp;·&nbsp; Open 7 Days
+      </p>
+    </div>
+  </section>
+
+  <div class="gold-rule" role="separator"></div>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES & PRICING
+  ═══════════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label">Services</div>
+      <h2 class="section-heading">What We Do</h2>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-card-left">
+            <span class="service-name">Men's Haircut</span>
+            <span class="service-duration">30 min</span>
+          </div>
+          <span class="service-price">from £15</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-left">
+            <span class="service-name">Skin Fade</span>
+            <span class="service-duration">45 min</span>
+          </div>
+          <span class="service-price">from £18</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-left">
+            <span class="service-name">Beard Trim</span>
+            <span class="service-duration">15 min</span>
+          </div>
+          <span class="service-price">from £8</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-left">
+            <span class="service-name">Haircut &amp; Beard Combo</span>
+            <span class="service-duration">50 min</span>
+          </div>
+          <span class="service-price">from £22</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-left">
+            <span class="service-name">Hot Towel Shave</span>
+            <span class="service-duration">30 min</span>
+          </div>
+          <span class="service-price">from £15</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-left">
+            <span class="service-name">Kids Cut <span class="service-tag">under 12</span></span>
+            <span class="service-duration">25 min</span>
+          </div>
+          <span class="service-price">from £12</span>
+        </div>
+
+      </div>
+
+      <p class="services-note"><em>Prices may vary by style. Final price confirmed at appointment.</em></p>
+
+      <div class="services-cta">
+        <a href="#booking" class="btn-gold btn-lg">Book Your Service</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" role="separator"></div>
+
+  <!-- ═══════════════════════════════════════════
+       GALLERY STRIP
+       TODO: Replace the placeholder divs below with real <img> tags once
+       the business provides actual work photos. Example:
+         <img src="photos/fade-01.jpg" alt="Skin fade example" class="gallery-item" />
+       Remove the .gallery-placeholder class and inner span when using real images.
+  ═══════════════════════════════════════════ -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-heading">Our Work</h2>
+    </div>
+
+    <div class="gallery-scroll">
+      <div class="gallery-track">
+        <div class="gallery-item gallery-placeholder">
+          <span>[Photo: skin fade]</span>
+        </div>
+        <div class="gallery-item gallery-placeholder">
+          <span>[Photo: beard trim]</span>
+        </div>
+        <div class="gallery-item gallery-placeholder">
+          <span>[Photo: textured crop]</span>
+        </div>
+        <div class="gallery-item gallery-placeholder">
+          <span>[Photo: hot towel shave]</span>
+        </div>
+        <div class="gallery-item gallery-placeholder">
+          <span>[Photo: kids cut]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" role="separator"></div>
+
+  <!-- ═══════════════════════════════════════════
+       BOOKING FORM
+       TODO: Replace YOUR_FORM_ID in the form action URL below with your
+       real Formspree form ID. Sign up at formspree.io, create a form,
+       and you'll get an ID like "xpzgkdqr". The action URL should be:
+         https://formspree.io/f/YOUR_FORM_ID
+  ═══════════════════════════════════════════ -->
+  <section class="booking" id="booking">
+    <div class="container container-narrow">
+      <div class="section-label">Appointments</div>
+      <h2 class="section-heading">Book Your Appointment</h2>
+      <p class="section-sub">Takes 60 seconds. We'll confirm by phone same day.</p>
+
+      <form
+        id="booking-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        novalidate
+      >
+        <div class="form-row">
+          <label for="name">Full Name <span class="required">*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your full name"
+            required
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Mobile Number <span class="required">*</span></label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="e.g. 07700 900000"
+            required
+            autocomplete="tel"
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="service">Service <span class="required">*</span></label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <option value="Men's Haircut (30 min, from £15)">Men's Haircut — from £15</option>
+            <option value="Skin Fade (45 min, from £18)">Skin Fade — from £18</option>
+            <option value="Beard Trim (15 min, from £8)">Beard Trim — from £8</option>
+            <option value="Haircut & Beard Combo (50 min, from £22)">Haircut &amp; Beard Combo — from £22</option>
+            <option value="Hot Towel Shave (30 min, from £15)">Hot Towel Shave — from £15</option>
+            <option value="Kids Cut under 12 (25 min, from £12)">Kids Cut (under 12) — from £12</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="date">Preferred Date <span class="required">*</span></label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="time">Preferred Time <span class="required">*</span></label>
+          <select id="time" name="time" required>
+            <option value="" disabled selected>Select a time…</option>
+            <option value="Morning (9:00am – 12:00pm)">Morning — 9:00am to 12:00pm</option>
+            <option value="Afternoon (12:00pm – 5:00pm)">Afternoon — 12:00pm to 5:00pm</option>
+            <option value="Evening (5:00pm – 7:00pm)">Evening — 5:00pm to 7:00pm (Mon–Sat)</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="notes">Notes <span class="optional">(optional)</span></label>
+          <textarea
+            id="notes"
+            name="notes"
+            rows="3"
+            placeholder="e.g. specific style, preferred barber, first visit"
+          ></textarea>
+        </div>
+
+        <div class="form-row form-error" id="form-error" aria-live="polite" hidden>
+          Please fill in all required fields before submitting.
+        </div>
+
+        <button type="submit" class="btn-gold btn-submit" id="submit-btn">
+          Request Appointment →
+        </button>
+      </form>
+
+      <!-- Success message — shown after successful submission, form is hidden -->
+      <div class="booking-success" id="booking-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3>You're in the book!</h3>
+        <p>We'll call to confirm your appointment within a few hours.<br>
+        Questions? Call us on <a href="tel:+447757225925">+44 7757 225925</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LOYALTY SCHEME BANNER
+  ═══════════════════════════════════════════ -->
+  <div class="loyalty-banner">
+    <div class="container">
+      <p>
+        <svg class="loyalty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor"/>
+        </svg>
+        <svg class="loyalty-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:22px;height:22px">
+          <rect x="4" y="13" width="24" height="3" rx="1.5" fill="currentColor"/>
+          <rect x="4" y="19" width="24" height="3" rx="1.5" fill="currentColor"/>
+          <rect x="4" y="7" width="24" height="3" rx="1.5" fill="currentColor"/>
+        </svg>
+        <strong>Loyalty Card</strong> — Collect a stamp every visit. Your 10th cut is on us.
+        <span class="loyalty-badge">💈</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="gold-rule" role="separator"></div>
+
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════════ -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">Reviews</div>
+      <h2 class="section-heading">What Clients Say</h2>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "Hands down the best barber shop in King's Lynn. I always leave feeling and looking my best."
+          </blockquote>
+          <cite>James T.</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "Super friendly, professional, and they always take their time. I always leave with a perfect haircut every single time."
+          </blockquote>
+          <cite>Ryan M.</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "The best barbershop in town. Clean, welcoming, and they genuinely care about their work. My go-to for years."
+          </blockquote>
+          <cite>Liam K.</cite>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" role="separator"></div>
+
+  <!-- ═══════════════════════════════════════════
+       HOURS & LOCATION
+  ═══════════════════════════════════════════ -->
+  <section class="hours-location" id="hours">
+    <div class="container">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-heading">Hours &amp; Location</h2>
+
+      <div class="hours-location-grid">
+
+        <div class="hours-col">
+          <h3 class="col-heading">Opening Hours</h3>
+          <table class="hours-table">
+            <tbody>
+              <tr>
+                <th scope="row">Monday – Friday</th>
+                <td>9:00am – 7:00pm</td>
+              </tr>
+              <tr>
+                <th scope="row">Saturday</th>
+                <td>8:00am – 7:00pm</td>
+              </tr>
+              <tr>
+                <th scope="row">Sunday</th>
+                <td>10:00am – 4:00pm</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="contact-block">
+            <p class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+              </svg>
+              115 Norfolk Street, King's Lynn, PE30 1AP
+            </p>
+            <p class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
+              </svg>
+              <a href="tel:+447757225925">+44 7757 225925</a>
+            </p>
+          </div>
+
+          <a href="#booking" class="btn-gold btn-lg hours-cta">Book Appointment</a>
+        </div>
+
+        <div class="map-col">
+          <h3 class="col-heading">Find Us</h3>
+          <!--
+            Google Maps embed styled to match dark theme via CSS filter.
+            The grayscale+invert filter gives it a moody, dark appearance.
+            If you want the standard coloured map, remove the .map-frame filter rule from styles.css.
+          -->
+          <div class="map-wrapper">
+            <iframe
+              class="map-frame"
+              title="Golden Scissors location — 115 Norfolk Street, King's Lynn"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2418.1!2d0.3935!3d52.7512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d7e0e8b9a9a9a9%3A0x0!2s115+Norfolk+St%2C+King%27s+Lynn+PE30+1AP!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" role="separator"></div>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-wordmark">Golden Scissors</span>
+          <address class="footer-address">
+            115 Norfolk Street, King's Lynn, PE30 1AP<br>
+            <a href="tel:+447757225925">+44 7757 225925</a>
+          </address>
+        </div>
+
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#booking">Book</a>
+          <a href="#hours">Hours</a>
+          <a href="tel:+447757225925">Call</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Golden Scissors, King's Lynn</p>
+        <p class="footer-credit">Website by <a href="mailto:hello@yourstudio.co.uk">Your Studio</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
